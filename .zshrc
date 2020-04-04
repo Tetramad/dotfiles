@@ -12,6 +12,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+USER=sejang
+MAIL=sejang@student.42seoul.kr
 EDITOR=/usr/bin/vim
 FCEDIT=vim
 PROMPT=' %(?.%F{green}.%F{red})%(2L.%#%#.%#)%f '

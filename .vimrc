@@ -40,4 +40,8 @@ endif
 
 " 42 header settings
 let g:hdr42user="sejang"
-let g:hdr42mail=""
+let g:hdr42mail="sejang@student.42seoul.kr"
+
+" guacamole settings
+nnoremap <F3> :!norminette "%"<CR>
+nnoremap <F2> <C-W>

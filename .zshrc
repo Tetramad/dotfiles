@@ -12,8 +12,15 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+PROMPT=' %(?.%F{green}.%F{red})%(2L.%#%#.%#)%f '
+
 USER=sejang
 MAIL=sejang@student.42seoul.kr
 EDITOR=/usr/bin/vim
 FCEDIT=vim
-PROMPT=' %(?.%F{green}.%F{red})%(2L.%#%#.%#)%f '
+
+alias vless="vim -u /usr/share/vim/vim80/macros/less.vim"
+
+# Load Homebrew config script
+source $HOME/.brewconfig.zsh
+export PATH=$HOME/.brew/bin:$PATH

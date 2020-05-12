@@ -1,9 +1,16 @@
 set nocompatible
 filetype on
 filetype indent on
+filetype plugin on
+
+syntax on
 
 if has("multi_byte")
 	set encoding=utf-8
+endif
+
+if filereadable($HOME."/.vim/colors/nord.vim")
+	colorscheme nord
 endif
 
 " vim setting
@@ -27,22 +34,21 @@ set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 
-syntax on
+function s:Autopath(path)
+	if isdirectory(a:path)
+		execute "set" "path+=".a:path
+	endif
+endfunction
 
-set path+=/usr/local/include
-set path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include
-set path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
-set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
-set path+=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks 
-if isdirectory("./include")
-	set path+=./include
-endif
-if isdirectory("./libft")
-	set path+=./libft
-endif
-if isdirectory($HOME."/.brew/Cellar/criterion/2.3.3/include")
-	set path+=$HOME/.brew/Cellar/criterion/2.3.3/include
-endif
+call s:Autopath("./include")
+call s:Autopath("./libft")
+call s:Autopath($HOME."/.local/include")
+call s:Autopath($HOME."/.brew/Cellar/criterion/2.3.3/include")
+call s:Autopath("/usr/local/include")
+call s:Autopath("/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include")
+call s:Autopath("/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include")
+call s:Autopath("/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include")
+call s:Autopath("/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks")
 
 " 42 header settings
 let g:hdr42user="sejang"

@@ -19,8 +19,20 @@ MAIL=sejang@student.42seoul.kr
 EDITOR=/usr/bin/vim
 FCEDIT=vim
 
-alias vless="vim -u /usr/share/vim/vim80/macros/less.vim"
+if [[ -d "/usr/share/vim/vim80" ]]
+then
+	alias vless="vim -u /usr/share/vim/vim80/macros/less.vim"
+elif [[ -d "/usr/share/vim/vim81" ]]
+then
+	alias vless="vim -u /usr/share/vim/vim81/macros/less.vim"
+fi
 
 # Load Homebrew config script
-source $HOME/.brewconfig.zsh
-export PATH=$HOME/.brew/bin:$PATH
+if [[ -a "$HOME/.brewconfig.zsh" ]]
+then
+	source $HOME/.brewconfig.zsh
+fi
+if [[ -d "$HOME/.brew/bin" ]]
+then
+	export PATH=$HOME/.brew/bin:$PATH
+fi

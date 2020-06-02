@@ -19,14 +19,7 @@ MAIL=sejang@student.42seoul.kr
 EDITOR=/usr/bin/vim
 FCEDIT=vim
 
-if [[ -d "/usr/share/vim/vim80" ]]
-then
-	alias vless="vim -u /usr/share/vim/vim80/macros/less.vim"
-elif [[ -d "/usr/share/vim/vim81" ]]
-then
-	alias vless="vim -u /usr/share/vim/vim81/macros/less.vim"
-fi
-
+alias vless="vim -u NONE -c \"runtime macros/less.vim\""
 # Load Homebrew config script
 if [[ -a "$HOME/.brewconfig.zsh" ]]
 then

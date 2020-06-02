@@ -67,6 +67,3 @@ inoremap <F2> <C-W>
 
 " clang format settings
 noremap <F4> :py3file /usr/share/clang/clang-format-10/clang-format.py<CR>
-
-" CMakeList autocmd
-autocmd BufNewFile,Bufread CMakeList.txt set filetype=cmake

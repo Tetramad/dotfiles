@@ -34,6 +34,7 @@ set tabstop=4
 set shiftwidth=4
 set splitright
 set splitbelow
+set hlsearch
 
 function s:Autopath(path)
 	if isdirectory(a:path)

@@ -29,3 +29,9 @@ if [[ -d "$HOME/.brew/bin" ]]
 then
 	export PATH=$HOME/.brew/bin:$PATH
 fi
+
+# Python Modules
+if [[ -d "$HOME/.local/bin" ]]
+then
+	export PATH=$HOME/.local/bin:$PATH
+fi

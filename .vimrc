@@ -67,4 +67,14 @@ nnoremap <F2> <C-W>
 inoremap <F2> <C-W>
 
 " clang format settings
-noremap <F4> :py3file /usr/share/clang/clang-format-10/clang-format.py<CR>
+noremap <F4> ggVG:py3file /usr/share/clang/clang-format-10/clang-format.py<CR><C-O><C-O>
+
+autocmd filetype cpp set sw=2
+autocmd filetype cpp set ts=2
+autocmd filetype cpp set sts=2
+autocmd filetype c set sw=4
+autocmd filetype c set ts=4
+autocmd filetype c set sts=4
+
+" coc gopls add missing imports setting
+autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')

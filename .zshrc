@@ -35,3 +35,9 @@ if [[ -d "$HOME/.local/bin" ]]
 then
 	export PATH=$HOME/.local/bin:$PATH
 fi
+
+# Go tools
+if [[ -d "$HOME/go/bin" ]]
+then
+	export PATH=$HOME/go/bin:$PATH
+fi

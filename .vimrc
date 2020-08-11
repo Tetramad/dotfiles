@@ -85,3 +85,10 @@ augroup END
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 
 let g:coc_disable_startup_warning=1
+
+" map <Space> to <Leader>
+nnoremap <Space> <Nop>
+let mapleader = " "
+
+" assign make test shortcut
+nnoremap <Leader><Space> :make! test<CR>

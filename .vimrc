@@ -28,13 +28,13 @@ set smartindent
 set copyindent
 set smarttab
 set wildmenu
-set tildeop
+set notildeop
 set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 set splitright
 set splitbelow
-set hlsearch
+set nohlsearch
 
 function s:Autopath(path)
 	if isdirectory(a:path)

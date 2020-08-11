@@ -72,9 +72,16 @@ noremap <F4> ggVG:py3file /usr/share/clang/clang-format-10/clang-format.py<CR><C
 autocmd filetype cpp set sw=2
 autocmd filetype cpp set ts=2
 autocmd filetype cpp set sts=2
-autocmd filetype c set sw=4
-autocmd filetype c set ts=4
-autocmd filetype c set sts=4
+
+augroup cproject
+	autocmd!
+	autocmd BufRead,BufNewFile *.c,*.h set filetype=c
+	autocmd filetype c set shiftwidth=4
+	autocmd filetype c set tabstop=4
+	autocmd filetype c set softtabstop=4
+augroup END
 
 " coc gopls add missing imports setting
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+
+let g:coc_disable_startup_warning=1

@@ -92,3 +92,12 @@ let mapleader = " "
 
 " assign make test shortcut
 nnoremap <Leader><Space> :make! test<CR>
+
+" easy window move
+nnoremap <Leader>h <C-W>h
+nnoremap <Leader>j <C-W>j
+nnoremap <Leader>k <C-W>k
+nnoremap <Leader>l <C-W>l
+nnoremap <Leader>s <C-W>s
+nnoremap <Leader>v <C-W>v
+nnoremap <Leader>c <C-W>c

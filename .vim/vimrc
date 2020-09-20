@@ -1,0 +1,29 @@
+filetype plugin indent on
+
+syntax on
+
+set background=dark
+set backspace=indent,eol,start
+set belloff=all
+set nocompatible
+set completeopt=menuone,preview
+set fillchars=
+set hidden
+set history=50
+set nohlsearch
+set incsearch
+set listchars=eol:$,tab:»\ ,trail:·
+set number
+set relativenumber
+set splitbelow
+set splitright
+set wildignore=*.o
+set wildmenu
+
+set path=.,**
+
+let $RTP=split(&runtimepath, ',')[0]
+let $RC="$HOME/.vim/vimrc"
+
+nnoremap <Space> <Nop>
+let mapleader=" "

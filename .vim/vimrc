@@ -17,7 +17,6 @@ set number
 set relativenumber
 set splitbelow
 set splitright
-set wildignore=*.o
 set wildmenu
 
 set path=.,**

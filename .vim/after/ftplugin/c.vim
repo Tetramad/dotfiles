@@ -9,7 +9,7 @@ setlocal define=^\s*#\s*define
 setlocal endofline
 setlocal noexpandtab
 setlocal fixendofline
-setlocal foldexpr=getline(v:lnum)=='{'?'>1':getline(v:lnum)=='}'?'<1':'='
+setlocal foldexpr=getline(v:lnum)=~'{.*'?'>1':getline(v:lnum)=~'}'?'<1':'='
 setlocal foldmethod=expr
 setlocal include=^\s*#\s*include
 setlocal shiftwidth=4

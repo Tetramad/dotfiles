@@ -2,7 +2,7 @@ filetype plugin indent on
 
 syntax on
 
-set background=dark
+set background=light
 set backspace=indent,eol,start
 set belloff=all
 set nocompatible

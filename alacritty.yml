@@ -1,0 +1,119 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+env:
+  TERM: alacritty
+
+window:
+  dimensions:
+    columns: 0
+    lines: 0
+  position:
+    x: 0
+    y: 0
+  padding:
+    x: 10
+    y: 10
+  dynamic_padding: false
+  decorations: full
+  startup_mode: Windowed
+  title: Alacritty
+  dynamic_title: true
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+font:
+  normal:
+    family: Consolas
+    style: Regular
+  bold:
+    family: Consolas
+    style: Bold
+  italic:
+    family: Consolas
+    style: Italic
+  bold_italic:
+    family: Consolas
+    style: Bold Italic
+  size: 13.0
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+
+draw_bold_text_with_bright_colors: false
+
+colors:
+  primary:
+    background: '#eff1f5'
+    foreground: '#4f5b66'
+  normal:
+    black: '#2b303b'
+    red: '#bf616a'
+    green: '#a3be8c'
+    yellow: '#ebcb8b'
+    blue: '#81a1c1'
+    magenta: '#b48ead'
+    cyan: '#8fbcbb'
+    white: '#c0c5ce'
+  bright:
+    black: '#65737e'
+    red: '#bf616a'
+    green: '#a3be8c'
+    yellow: '#ebcb8b'
+    blue: '#81a1c1'
+    magenta: '#b48ead'
+    cyan: '#8fbcbb'
+    white: '#c0c5ce'
+  indexed_colors: []
+
+bell:
+  animation: EaseOutExpo
+  duration: 0
+  color: '#ffffff'
+  command: None
+
+background_opacity: 0.95
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  save_to_clipboard: false
+
+cursor:
+  style: Block
+  vi_mode_style: None
+  unfocused_hollow: true
+  thickness: 0.15
+
+live_config_reload: true
+
+#shell:
+#  program: /bin/bash
+#  args:
+#    - --login
+
+working_directory: None
+
+alt_send_esc: true
+
+#mouse:
+  #double_click: { threshold: 300 }
+  #triple_click: { threshold: 300 }
+  #hide_when_typing: false
+  #url:
+    #launcher:
+    #  program: xdg-open
+    #  args: []
+    #modifiers: None
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+#debug:
+  #render_timer: false
+  #persistent_logging: false
+  #log_level: Warn
+  #print_events: false

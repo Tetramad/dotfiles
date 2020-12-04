@@ -14,7 +14,7 @@ window:
     x: 10
     y: 10
   dynamic_padding: false
-  decorations: full
+  decorations: none
   startup_mode: Windowed
   title: Alacritty
   dynamic_title: true
@@ -25,18 +25,18 @@ scrolling:
 
 font:
   normal:
-    family: Consolas
+    family: Fira Code
     style: Regular
   bold:
-    family: Consolas
+    family: Fira Code
     style: Bold
   italic:
-    family: Consolas
+    family: Fira Code
     style: Italic
   bold_italic:
-    family: Consolas
+    family: Fira Code
     style: Bold Italic
-  size: 13.0
+  size: 12.0
   offset:
     x: 0
     y: 0
@@ -44,31 +44,30 @@ font:
     x: 0
     y: 0
 
-draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 
 colors:
   primary:
-    background: '#eff1f5'
-    foreground: '#4f5b66'
+    background: '#e5e9f0'
+    foreground: '#2e4550'
   normal:
-    black: '#2b303b'
-    red: '#bf616a'
-    green: '#a3be8c'
-    yellow: '#ebcb8b'
-    blue: '#81a1c1'
-    magenta: '#b48ead'
-    cyan: '#8fbcbb'
-    white: '#c0c5ce'
+    black: '#434c5e'
+    red: '#a6555d'
+    green: '#8fa67b'
+    yellow: '#d1b57b'
+    blue: '#5e81ac'
+    magenta: '#9c7b96'
+    cyan: '#7ca3a3'
+    white: '#d8dee9'
   bright:
-    black: '#65737e'
+    black: '#4c566a'
     red: '#bf616a'
     green: '#a3be8c'
     yellow: '#ebcb8b'
     blue: '#81a1c1'
     magenta: '#b48ead'
     cyan: '#8fbcbb'
-    white: '#c0c5ce'
-  indexed_colors: []
+    white: '#e5e9f0'
 
 bell:
   animation: EaseOutExpo
@@ -76,7 +75,7 @@ bell:
   color: '#ffffff'
   command: None
 
-background_opacity: 0.95
+background_opacity: 1.0
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"

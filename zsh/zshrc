@@ -40,3 +40,8 @@ if [[ -d "$HOME/go/bin" ]]
 then
 	export PATH=$HOME/go/bin:$PATH
 fi
+
+# Autostart X at login
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+	exec startx
+fi

@@ -11,35 +11,13 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 PROMPT=' %(?.%F{green}.%F{red})%(2L.%#%#.%#)%f '
 
-USER=sejang
-MAIL=sejang@student.42seoul.kr
 EDITOR=/usr/bin/vim
 FCEDIT=vim
-
-alias vless="vim -u NONE -c \"runtime macros/less.vim\""
-# Load Homebrew config script
-if [[ -a "$HOME/.brewconfig.zsh" ]]
-then
-	source $HOME/.brewconfig.zsh
-fi
-if [[ -d "$HOME/.brew/bin" ]]
-then
-	export PATH=$HOME/.brew/bin:$PATH
-fi
-
-# Python Modules
-if [[ -d "$HOME/.local/bin" ]]
-then
-	export PATH=$HOME/.local/bin:$PATH
-fi
-
-# Go tools
-if [[ -d "$HOME/go/bin" ]]
-then
-	export PATH=$HOME/go/bin:$PATH
-fi
 
 # Autostart X at login
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then

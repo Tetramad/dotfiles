@@ -16,8 +16,10 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 PROMPT=' %(?.%F{green}.%F{red})%(2L.%#%#.%#)%f '
 
-EDITOR=/usr/bin/vim
-FCEDIT=vim
+EDITOR=/usr/bin/nvim
+FCEDIT=nvim
+
+alias nv='nvim'
 
 # Autostart X at login
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then

@@ -26,16 +26,16 @@ scrolling:
 
 font:
   normal:
-    family: Fira Code
+    family: Fira Mono
     style: Regular
   bold:
-    family: Fira Code
+    family: Fira Mono
     style: Bold
   italic:
-    family: Fira Code
+    family: Fira Mono
     style: Italic
   bold_italic:
-    family: Fira Code
+    family: Fira Mono
     style: Bold Italic
   size: 12.0
   offset:
@@ -45,21 +45,36 @@ font:
     x: 0
     y: 0
 
-draw_bold_text_with_bright_colors: true
-
 colors:
   primary:
-    background: '#e5e9f0'
-    foreground: '#2e4550'
+    background: '#2e3440'
+    foreground: '#d8dee9'
+    dim_foreground: '#a5abb6'
+  cursor:
+    text: '#2e3440'
+    cursor: '#d8dee9'
+  vi_mode_cursor:
+    text: '#2e3440'
+    cursor: '#d8dee9'
+  selection:
+    text: CellForeground
+    background: '#4c566a'
+  search:
+    matches:
+      foreground: CellBackground
+      background: '#88c0d0'
+    bar:
+      background: '#434c5e'
+      foreground: '#d8dee9'
   normal:
-    black: '#434c5e'
-    red: '#a6555d'
-    green: '#8fa67b'
-    yellow: '#d1b57b'
-    blue: '#5e81ac'
-    magenta: '#9c7b96'
-    cyan: '#7ca3a3'
-    white: '#d8dee9'
+    black: '#3b4252'
+    red: '#bf616a'
+    green: '#a3be8c'
+    yellow: '#ebcb8b'
+    blue: '#81a1c1'
+    magenta: '#b48ead'
+    cyan: '#88c0d0'
+    white: '#e5e9f0'
   bright:
     black: '#4c566a'
     red: '#bf616a'
@@ -68,7 +83,16 @@ colors:
     blue: '#81a1c1'
     magenta: '#b48ead'
     cyan: '#8fbcbb'
-    white: '#e5e9f0'
+    white: '#eceff4'
+  dim:
+    black: '#373e4d'
+    red: '#94545d'
+    green: '#809575'
+    yellow: '#b29e75'
+    blue: '#68809a'
+    magenta: '#8c738c'
+    cyan: '#6d96a5'
+    white: '#aeb3bb'
 
 bell:
   animation: EaseOutExpo

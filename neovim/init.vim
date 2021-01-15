@@ -4,7 +4,9 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 call plug#end()
 
-filetype plugin indent on
+filetype on
+filetype plugin on
+filetype indent on
 
 syntax on
 

@@ -4,9 +4,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 call plug#end()
 
-filetype on
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 syntax on
 
@@ -30,11 +28,13 @@ set laststatus=2
 set encoding=utf-8
 set nowrap
 set path=.,**
+set clipboard=unnamedplus
 
 let $RC = stdpath('config') . "/init.vim"
 
 let g:loaded_netrw = 1
 let g:loaded_netrwPlugin = 1
+let g:loaded_python_provider = 0
 
 let g:lightline = {
 			\ 'colorscheme': 'nord',
@@ -47,3 +47,5 @@ augroup project
 	autocmd!
 	autocmd BufRead,BufNewFile *.c,*.h set filetype=c
 augroup END
+
+autocmd TermOpen * setlocal nonumber norelativenumber

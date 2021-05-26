@@ -1,0 +1,8 @@
+PROMPT=' %(?.%F{green}.%F{red})%(2L.%#%#.%#)%f '
+
+EDITOR=/usr/bin/nvim
+FCEDIT=nvim
+BROWSER=firefox
+PAGER=less
+
+PATH=$PATH:~/.local/bin

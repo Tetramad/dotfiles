@@ -1,0 +1,97 @@
+{
+    "layer": "bottom",
+    "position": "right",
+    "width": 64,
+    "modules-left": ["sway/workspaces", "sway/window"],
+    "modules-center": [],
+    "modules-right": [
+        "sway/mode",
+        "clock#day",
+        "clock#time",
+        "battery",
+        "backlight",
+        "pulseaudio#sink",
+        "pulseaudio#source",
+        "network",
+        "tray"
+    ],
+    "sway/workspaces": {
+        "all-outputs": true,
+        "format": "<span>{value}</span>",
+        "disable-scroll": true,
+        "disable-click": false,
+        "persistent_workspaces": {
+            "MAIN": [],
+            "SUB": []
+        }
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>",
+        "max-length": 8,
+        "min-length": 8
+    },
+    "sway/window": {
+        "format": "{}",
+        "rotate": 270
+    },
+    "pulseaudio#sink": {
+        "format": "{icon}{volume}%",
+        "format-muted": "🔈❌ {format_source}",
+        "format-icons": {
+            "default": ["🔈", "🔉", "🔉", "🔊"]
+        },
+        "max-length": 8,
+        "min-length": 8,
+        "on-click": "pavucontrol"
+    },
+    "pulseaudio#source": {
+        "format": "{format_source}",
+        "format-source": "🎤{volume}%",
+        "format-source-muted": "🎤❌",
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "format-ethernet": "Eth",
+        "format-wifi": "{essid}",
+        "format-linked": "(No IP)",
+        "format-disconnected": "(No Net)",
+        "max-length": 8,
+        "min-length": 8,
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format-wifi": "{essid}"
+    },
+    "backlight": {
+        "format": "💡{percent}%",
+        "max-length": 8,
+        "min-length": 8
+    },
+    "battery": {
+        "interval": 5,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "🔋{capacity}%",
+        "format-charging": "🔌{capacity}%",
+        "max-length": 8,
+        "min-length": 8
+    },
+    "clock#day": {
+        "interval": 60,
+        "format": "{:%m.%d}",
+        "max-length": 8,
+        "min-length": 8,
+        "tooltip-format": "<big>{:%Y %B}</big>\n{calendar}"
+    },
+    "clock#time": {
+        "interval": 5,
+        "format": "{:%H:%M}",
+        "max-length": 8,
+        "min-length": 8,
+        "tooltip-format": "<big>{:%Y %B}</big>\n{calendar}"
+    },
+    "tray": {
+        "icon-size": 32,
+        "spacing": 4
+    }
+}

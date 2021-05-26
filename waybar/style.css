@@ -1,0 +1,129 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Fira Mono, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+#window {
+    padding: 32px 0 0 0;
+}
+
+window#waybar {
+    background-color: rgb(46, 52, 64);
+    border-left: 3px solid rgb(67, 76, 94);
+    color: rgb(236, 239, 244);
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: rgb(236, 239, 244);
+    box-shadow: inset 0 -3px transparent;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 -3px rgb(236, 239, 244);
+}
+
+#workspaces button.focused {
+    background-color: rgb(76, 86, 106);
+    box-shadow: inset 0 -3px rgb(236, 239, 244);
+}
+
+#workspaces button.urgent {
+    background-color: rgb(191, 97, 106);
+}
+
+#mode {
+    padding: 2px 0;
+    background-color: rgb(163, 190, 140);
+    border-bottom: 3px solid rgb(236, 239, 244);
+}
+
+#clock,
+#battery,
+#backlight,
+#network,
+#pulseaudio,
+#tray,
+#mode {
+    color: rgb(46, 52, 64);
+    padding: 4px 0;
+    margin: 2px 3px;
+    border-radius: 6px;
+}
+
+#window,
+#workspaces {
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-top: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-bottom: 0;
+}
+
+#clock {
+    color: rgb(236, 239, 244);
+    background-color: rgb(67, 76, 94);
+}
+
+#battery {
+    background-color: rgb(236, 239, 244);
+}
+
+#battery.charging, #battery.plugged {
+    background-color: rgb(163, 190, 140);
+}
+
+@keyframes blink {
+    to {
+        background-color: rgb(236, 239, 244);
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: rgb(191, 97, 106);
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#backlight {
+    background-color: rgb(136, 192, 208);
+}
+
+#pulseaudio {
+    background-color: rgb(235, 203, 139);
+}
+
+#pulseaudio.muted {
+    background-color: rgb(208, 135, 112);
+}
+
+#network {
+    background-color: rgb(129, 161, 193);
+}
+
+#network.disconnected {
+    background-color: rgb(208, 135, 112);
+}
+
+#tray {
+    background-color: rgb(94, 129, 172);
+    padding: 8px 0;
+}
+
+label:focus {
+    background-color: #000000;
+}

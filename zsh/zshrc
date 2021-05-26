@@ -14,14 +14,4 @@ compinit
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-PROMPT=' %(?.%F{green}.%F{red})%(2L.%#%#.%#)%f '
-
-EDITOR=/usr/bin/nvim
-FCEDIT=nvim
-
 alias nv='nvim'
-
-# Autostart X at login
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-	exec startx
-fi

@@ -205,6 +205,11 @@ gaps {
 #client.urgent
 #client.placeholder
 
+# Focus
+focus_follows_mouse no
+focus_on_window_activation urgent
+focus_wrapping yes
+
 include /etc/sway/config.d/*
 
 ### Startup Command

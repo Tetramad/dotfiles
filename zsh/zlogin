@@ -1,5 +1,6 @@
 if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
 	export XDG_CONFIG_HOME=$HOME/.config
+	export XDG_PICTURES_DIR=$HOME/Pictures
 	export XDG_SESSION_TYPE=wayland
 	export XDG_CURRENT_DESKTOP=sway
 	export MOZ_ENABLE_WAYLAND=1
@@ -7,6 +8,9 @@ if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
 	export GTK_IM_MODULE=fcitx
 	export QT_IM_MODULE=fcitx
 	export XMODIFIERS=@im=fcitx
+
+	# this fix intellij startup error, idk why.
+	export _JAVA_AWT_WM_NONREPARENTING=1
 
 	export SHLVL=0
 	exec sway

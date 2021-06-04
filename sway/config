@@ -216,3 +216,5 @@ include /etc/sway/config.d/*
 exec swaymsg workspace "SUB"
 exec swaymsg workspace "MAIN"
 exec "fcitx5 &"
+exec "/usr/lib/kdeconnectd"
+exec "kdeconnect-indicator"

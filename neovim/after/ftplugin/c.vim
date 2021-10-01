@@ -1,3 +1,14 @@
+function c#FoldLevelOf(lnum)
+	let l:line = getline(a:lnum)
+	if count(line, '{') > count(line, '}')
+		return 'a1'
+	elseif count(line, '{') < count(line, '}')
+		return 's1'
+	else
+		return '='
+	endif
+endfunction
+
 set wildignore+=*.o
 
 setlocal autoindent
@@ -9,8 +20,8 @@ setlocal define=^\s*#\s*define
 setlocal endofline
 setlocal noexpandtab
 setlocal fixendofline
-setlocal foldexpr=getline(v:lnum)=~'{.*'?'>1':getline(v:lnum)=~'}'?'<1':'='
-setlocal foldlevel=1
+setlocal foldexpr=c#FoldLevelOf(v:lnum)
+setlocal foldlevelstart=99
 setlocal foldmethod=expr
 setlocal include=^\s*#\s*include
 setlocal shiftwidth=4

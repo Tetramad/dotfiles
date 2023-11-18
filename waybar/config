@@ -17,22 +17,23 @@
     ],
     "sway/workspaces": {
         "all-outputs": true,
-        "format": "<span>{value}</span>",
+        "format": "<span>{name}</span>",
         "disable-scroll": true,
         "disable-click": false,
         "persistent_workspaces": {
-            "MAIN": [],
-            "SUB": []
+            "0:MAIN": [],
+            "1:SUB": []
         }
+    },
+    "sway/window": {
+	    "format": "{title}",
+	    "rotate": 270,
+	    "icon": false,
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>",
         "max-length": 8,
         "min-length": 8
-    },
-    "sway/window": {
-        "format": "{}",
-        "rotate": 270
     },
     "pulseaudio#sink": {
         "format": "{icon}{volume}%",
@@ -71,7 +72,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "🔋{capacity}%",
+        "format": "<span font='icon'>🔋</span>{capacity}%",
         "format-charging": "🔌{capacity}%",
         "max-length": 8,
         "min-length": 8

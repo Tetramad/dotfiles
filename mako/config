@@ -42,4 +42,4 @@ text-color=#BF616ACC
 
 [actionable=true]
 background-color=#728B5DCC
-default-timeout=0
+default-timeout=60000

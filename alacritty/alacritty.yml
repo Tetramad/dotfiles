@@ -18,6 +18,7 @@ window:
   startup_mode: Windowed
   title: Alacritty
   dynamic_title: true
+  opacity: 0.95
 
 scrolling:
   history: 10000
@@ -62,9 +63,9 @@ colors:
     matches:
       foreground: CellBackground
       background: '#88c0d0'
-    bar:
-      background: '#434c5e'
-      foreground: '#d8dee9'
+  footer_bar:
+    background: '#434c5e'
+    foreground: '#d8dee9'
   normal:
     black: '#3b4252'
     red: '#bf616a'
@@ -99,8 +100,6 @@ bell:
   color: '#ffffff'
   command: None
 
-background_opacity: 1.0
-
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
   save_to_clipboard: false
@@ -119,8 +118,6 @@ live_config_reload: true
 #    - --login
 
 working_directory: None
-
-alt_send_esc: true
 
 #mouse:
   #double_click: { threshold: 300 }

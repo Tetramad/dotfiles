@@ -18,19 +18,20 @@ setlocal comments=sO:/*,mb:**,ex:*/,://
 setlocal complete=.,w,b,i,d,t
 setlocal define=^\s*#\s*define
 setlocal endofline
-setlocal noexpandtab
+setlocal expandtab
 setlocal fixendofline
 setlocal foldexpr=c#FoldLevelOf(v:lnum)
 setlocal foldlevelstart=99
 setlocal foldmethod=expr
 setlocal include=^\s*#\s*include
+setlocal listchars=tab:│·,trail:·,extends:→
+setlocal noswapfile
+setlocal nowrap
 setlocal shiftwidth=4
 setlocal smartindent
 setlocal softtabstop=4
-setlocal noswapfile
 setlocal tabstop=4
 setlocal textwidth=80
-setlocal nowrap
 
 if !empty(glob("Makefile")) 
 	nnoremap <Leader><Space> :silent make\|redraw!\|clist<CR>

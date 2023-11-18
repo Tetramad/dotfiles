@@ -1,41 +1,42 @@
 local vim_true = 1
 local vim_false = 0
 
-local Plug = vim.fn['plug#']
-vim.call('plug#begin', vim.call('stdpath', 'data')..'/plugged')
-Plug('tpope/vim-surround')
-Plug('arcticicestudio/nord-vim')
-Plug('itchyny/lightline.vim')
-Plug('rust-lang/rust.vim')
-Plug('neoclide/coc.nvim', {branch = 'release'})
-Plug('cespare/vim-toml')
-vim.call('plug#end')
-
-local cmd = vim.cmd
 vim.cmd('filetype plugin indent on')
 vim.cmd('syntax on')
-vim.cmd('colorscheme nord')
 
 local opt = vim.opt
 opt.background = 'dark'
 opt.backspace = {'indent', 'eol', 'start'}
+opt.backup = false
 opt.belloff = 'all'
+opt.clipboard = 'unnamedplus'
+opt.colorcolumn = '80'
 opt.completeopt = {'menuone', 'preview'}
+opt.encoding = 'utf-8'
+opt.expandtab = true
 opt.hidden = true
 opt.history = 50
 opt.hlsearch = false
 opt.incsearch = true
+opt.laststatus = 2
 opt.listchars = {tab = '» ', trail = '·', eol = '$'}
 opt.number = true
+opt.path = {'.', '**'}
 opt.relativenumber = true
+opt.scrolloff = 4
+opt.shiftwidth = 4
+opt.signcolumn = 'yes'
+opt.softtabstop = 4
 opt.splitbelow = true
 opt.splitright = true
+opt.swapfile = false
+opt.tabstop = 4
+opt.termguicolors = true
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
+opt.updatetime = 300
 opt.wildmenu = true
-opt.laststatus = 2
-opt.encoding = 'utf-8'
 opt.wrap = false
-opt.path = {'.', '**'}
-opt.clipboard = 'unnamedplus'
 
 local g = vim.g
 g.mapleader = ' '
@@ -47,19 +48,17 @@ g.loaded_python_provider = vim_false
 g.loaded_ruby_provider = vim_false
 g.loaded_perl_provider = vim_false
 g.loaded_node_provider = vim_false
-g.clipboard = 'wl-copy'
 
 g.lightline = {colorscheme = 'nord'}
 
-cmd[[
+vim.cmd[[
 augroup c_project
 	autocmd!
 	autocmd BufRead,BufNewFile *.c,*.h set filetype=c
 augroup END
 ]]
 
-cmd[[
+vim.cmd[[
 autocmd TermOpen * setlocal nonumber norelativenumber
 autocmd TermOpen * startinsert
 ]]
-

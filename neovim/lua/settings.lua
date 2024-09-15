@@ -51,10 +51,14 @@ g.loaded_node_provider = vim_false
 
 g.lightline = {colorscheme = 'nord'}
 
+if opt.columns:get() < 160 then
+    g.venter_width = tostring(opt.columns:get() / 6)
+end
+
 vim.cmd[[
 augroup c_project
-	autocmd!
-	autocmd BufRead,BufNewFile *.c,*.h set filetype=c
+    autocmd!
+    autocmd BufRead,BufNewFile *.c,*.h set filetype=c
 augroup END
 ]]
 

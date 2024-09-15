@@ -14,7 +14,7 @@ set wildignore+=*.o
 setlocal autoindent
 setlocal cindent
 setlocal colorcolumn=+0
-setlocal comments=sO:/*,mb:**,ex:*/,://
+setlocal comments=srO:/*,mb:*,ex:*/,://
 setlocal complete=.,w,b,i,d,t
 setlocal define=^\s*#\s*define
 setlocal endofline

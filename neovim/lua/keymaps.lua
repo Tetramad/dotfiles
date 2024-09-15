@@ -1,3 +1,4 @@
+local del = vim.keymap.del
 local map = vim.keymap.set
 
 map('', '<Space>', '<Nop>', {noremap = true})
@@ -30,9 +31,21 @@ map('n', '<C-j>', ':m .+1<CR>==', {noremap = true})
 map('n', '<C-k>', ':m .-2<CR>==', {noremap = true})
 
 -- LSP
-map('n', '<leader>h', '<cmd>lua vim.lsp.buf.hover()<CR>', {noremap = true, silent = true})
-map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', {noremap = true, silent = true})
-map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true, silent = true})
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(ev)
+    local opts = { buffer = ev.buf, noremap = true, silent = true };
+    del('n', 'K', { buffer = ev.buf })
+    map('n', 'gD', vim.lsp.buf.declaration, opts)
+    map('n', 'gd', vim.lsp.buf.definition, opts)
+    map('n', '<leader>h', vim.lsp.buf.hover, opts)
+    map('n', '<leader>c', vim.lsp.buf.rename, opts)
+    map('n', 'gr', vim.lsp.buf.references, opts)
+    map('n', '<leader>d', vim.diagnostic.open_float, opts)
+    map('n', '[d', vim.diagnostic.goto_prev, opts)
+    map('n', ']d', vim.diagnostic.goto_next, opts)
+    map('n', '<leader>D', vim.diagnostic.setloclist, opts)
+  end,
+})
 
 map({'n', 'v'}, '<leader>y', [["+y]])
 map('n', '<leader>Y', [["+Y]])
